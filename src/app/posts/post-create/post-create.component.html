@@ -1,0 +1,19 @@
+<mat-card>
+    <form (submit)=" onAddPost(postForm)" #postForm = "ngForm">
+        <mat-form-field>
+            <input matInput type="text" placeholder="Post Title" name="title" #titleToIdentify="ngModel" ngModel required>
+            <mat-error *ngIf="titleToIdentify.invalid">{{ "Title is required" }}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput rows="6"  ngModel name="content" placeholder="Post Content" #contentToIdentify="ngModel" required></textarea>
+            <mat-error *ngIf="contentToIdentify.invalid">{{ "Body is Required" }}</mat-error>
+        </mat-form-field>
+        <button type="submit" color="accent" mat-raised-button>Save Post</button> 
+    </form>
+    
+</mat-card>
+
+
+<hr>
+
+
